@@ -56,15 +56,44 @@ function getComputerChoice() {
     }
 }
 
-/* Create a loop to continue playing the game until the score reaches 5 */
-while (playerScore > 5 && computerScore > 5) {
+/* Create a function to play the game */
+function playRPS(getPlayerChoice, getComputerChoice) {
+    /* Create a loop to continue playing the game until the score reaches 5 */
+    while (playerScore < 5 && computerScore < 5) {
+        if (getPlayerChoice() === 'rock' && getComputerChoice() === 'paper') {
+            computerScore++;
+            console.log('Sorry, you lost this round! Paper beats Rock.');
+        } else if (getPlayerChoice() === 'rock' && getComputerChoice() === 'scissors') {
+            playerScore++
+            console.log('Nice! You won this round! Rock beats Scissors.');
+        } else if (getPlayerChoice() === 'rock' && getComputerChoice() === 'rock') {
+            console.log('This round is a tie! No points awarded this time.');
+        }
+
+        if (getPlayerChoice() === 'paper' && getComputerChoice() === 'paper') {
+            console.log('This round is a tie! No points awarded this time.');
+        } else if (getPlayerChoice() === 'paper' && getComputerChoice() === 'scissors') {
+            computerScore++;
+            console.log('Sorry, you lost this round! Scissors beat Paper.');
+        } else if (getPlayerChoice() === 'paper' && getComputerChoice() === 'rock')
+            playerScore++;
+            console.log('Nice! You won this round! Paper beats Rock.');
+
+        if (getPlayerChoice() === 'scissors' && getComputerChoice() === 'paper') {
+            playerScore++
+            console.log('Nice! You won this round! Scissors beat Paper.');
+        } else if (getPlayerChoice() === 'scissors' && getComputerChoice() === 'scissors') {
+            console.log('This round is a tie! No points awarded this time.');
+        } else if (getPlayerChoice() === 'scissors' && getComputerChoice() === 'rock') {
+            computerScore++
+            console.log('Sorry, you lost this round! Paper beats Rock.');
+        }
+            
+}
 
 }
 
-
-getComputerChoice();
-
-
+playRPS(getPlayerChoice(), getComputerChoice());
 
 /*
 
