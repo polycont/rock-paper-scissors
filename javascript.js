@@ -17,7 +17,6 @@ and announce the winner.
 /* TODOS
 
 TODO: Create a play again function?
-TODO: Add while loop to handle invalid player input
 
 */
 
