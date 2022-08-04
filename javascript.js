@@ -35,8 +35,21 @@ let computerScore = 0;
 
 /* Greet the player by name and instruct them to enter rock, paper, or scissors. */
 
-console.log(`Hello, ${playerName}. Welcome to Rock Paper Scissors. Please enter your choice!`)
+let playerChoice = prompt(`Hello, ${playerName}. Welcome to Rock Paper Scissors. Please enter your choice!`).toLowerCase();
+let computerChoice;
 
+function getComputerChoice() {
+    let choiceCalc = Math.floor(Math.random() * 100);
+    if (choiceCalc > 33 && choiceCalc < 66) {
+        return 'rock';
+    } else if (choiceCalc < 33) {
+        return 'paper';
+    } else if (choiceCalc > 66) {
+        return 'scissors';
+    }
+}
+
+getComputerChoice();
 
 
 
@@ -73,6 +86,7 @@ Exit loop
 Log a congratulations message to the console. 
 
 TODO: Create a play again function?
+TODO: Add while loop to handle invalid player input
 
 
 
