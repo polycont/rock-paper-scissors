@@ -12,10 +12,6 @@ and announce the winner.
 
 The flow will look something like this.
 
-Prompt the player for their name.
-Store their name in a variable.
-Create a variable to track the player's score with an initial value of 0.
-Create a variable to track the computer's score with an initial value of 0.
 Create a function to compare the two scores. (?)
 
 Greet the player by name and instruct them to enter rock, paper, or scissors.
@@ -25,6 +21,26 @@ Create function to get the computer's selection.
 Compare the player's selection against the computer's selection.
 
 Wrap the following in a loop that stops when either player's score reaches 5.
+
+*/
+
+/* Prompt the player for their name and store it in a variable. */
+const playerName = prompt('What is your name?');
+
+/* Create a variable to track the player's score with an initial value of 0.
+Create a variable to track the computer's score with an initial value of 0. */
+
+let playerScore = 0;
+let computerScore = 0;
+
+/* Greet the player by name and instruct them to enter rock, paper, or scissors. */
+
+console.log(`Hello, ${playerName}. Welcome to Rock Paper Scissors. Please enter your choice!`)
+
+
+
+
+/*
 
 IF player selected ROCK and the computer selected PAPER...
     Increase computer's score by 1.
