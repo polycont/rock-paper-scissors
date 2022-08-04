@@ -29,15 +29,22 @@ const playerName = prompt('What is your name?');
 
 /* Create a variable to track the player's score with an initial value of 0.
 Create a variable to track the computer's score with an initial value of 0. */
-
 let playerScore = 0;
 let computerScore = 0;
 
-/* Greet the player by name and instruct them to enter rock, paper, or scissors. */
 
-let playerChoice = prompt(`Hello, ${playerName}. Welcome to Rock Paper Scissors. Please enter your choice!`).toLowerCase();
+
+
+
 let computerChoice;
 
+/* Greet the player by name and instruct them to enter rock, paper, or scissors. */
+function getPlayerChoice() {
+    let playerChoice = prompt(`Hello, ${playerName}. Welcome to Rock Paper Scissors. Please enter your choice!`).toLowerCase();
+    return playerChoice;
+}
+
+/* Create a function to calculate the computer's choice and return the value */
 function getComputerChoice() {
     let choiceCalc = Math.floor(Math.random() * 100);
     if (choiceCalc > 33 && choiceCalc < 66) {
@@ -48,6 +55,12 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
+
+/* Create a loop to continue playing the game until the score reaches 5 */
+while (playerScore > 5 && computerScore > 5) {
+
+}
+
 
 getComputerChoice();
 
