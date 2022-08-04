@@ -87,14 +87,14 @@ function playRPS() {
             computerScore++
             console.log('Sorry, you lost this round! Paper beats Rock.');
         }
-            
+        console.log(`Your Score: ${playerScore} points. Computer Score: ${computerScore} points.`);
 }
 
 /* Print a win or loss message to the console. */
 if (playerScore === 5) {
-    console.log('Congratulations! You won!');
+    console.log(`Congratulations! You won with ${playerScore} points to the computer's ${computerScore} points!`);
 } else {
-    console.log('Darn! Looks like the computer wins this time.');
+    console.log(`Darn! Looks like the computer wins this time with ${computerScore} points versus your ${playerScore} points.`);
 }
 
 }
