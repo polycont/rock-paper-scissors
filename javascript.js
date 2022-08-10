@@ -91,10 +91,3 @@ astaff.addEventListener('click', function (e) {
     computerSelection = getComputerChoice();
     playRPS();
 });
-
-/* Print a win or loss message to the console.
-if (playerScore === 5) {
-    console.log(`Congratulations! You won with ${playerScore} points to the computer's ${computerScore} points!`);
-} else {
-    console.log(`Darn! Looks like the computer wins this time with ${computerScore} points versus your ${playerScore} points.`);
-} */
