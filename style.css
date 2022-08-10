@@ -10,7 +10,7 @@ body,
 
 @font-face {
     font-family: 'RuneScape UF';
-    src: url("fonts/runescape_uf.ttf") format('truetype');
+    src: url("https://github.com/polycont/rock-paper-scissors/tree/main/fonts/runescape_uf.ttf");
     font-weight: bold;
     font-style: normal;
 }
