@@ -1,101 +1,100 @@
-/*
+/* 
 
-THE PROBLEM:
+TODOS
 
-I need to create an implementation of Rock Paper Scissors that can be played 
-entirely from the console. It does not have an interface, but it will need
-to be able to take text inputs from the player -- three, to be specific:
-rock, paper, or scissors. The program also needs to generate a selection
-for the computer, and subsequently compare its own selection with the player's.
-
-The program must keep track of the score for each 'player,' and continue initiating new game rounds
-until one player earns five points. When that happens, the program needs to stop the game entirely
-and announce the winner.
+TODO: Create a play again button/function.
+TODO: Add a money stack with appropriately-OSRS-colored text depending on how much there is. Subtract this.
+When it reaches 0, you lose. Until then, you can keep playing. 
+TODO: Let players make custom wagers?
+TODO: Take player's name as input to greet them.
 
 */
 
-/* TODOS
+// Declaring variables needed for the game's operation.
+const dscim = document.getElementById('weapon1');
+const bowfa = document.getElementById('weapon2');
+const astaff = document.getElementById('weapon3');
 
-TODO: Create a play again function?
+const kills = document.getElementById('kills');
+const deaths = document.getElementById('deaths');
 
-*/
+const log = document.getElementById('results-box');
 
+let playerSelection = '';
+let computerSelection;
 
-/* Prompt the player for their name and store it in a variable. */
-const playerName = prompt('What is your name?');
-
-/* Create a variable to track the player's score with an initial value of 0.
-Create a variable to track the computer's score with an initial value of 0. */
+/* Score tracking. */
 let playerScore = 0;
 let computerScore = 0;
 
-/* Create a function to play the game */
-function playRPS() {
-
-    /* Instruct them to enter rock, paper, or scissors. */
-    function getPlayerChoice() {
-        let playerChoice = prompt('Please enter your choice!').toLowerCase();
-        console.log(playerChoice);
-        return playerChoice;
-    }
-
-    /* Create a function to calculate the computer's choice and return the value */
-    function getComputerChoice() {
-        let choiceCalc = Math.floor(Math.random() * 100);
-        if (choiceCalc > 33 && choiceCalc < 66) {
-            return 'rock';
-        } else if (choiceCalc < 33) {
-            return 'paper';
-        } else if (choiceCalc > 66) {
-            return 'scissors';
-        }
-    }
-
-    alert(`Hello, ${playerName}. Welcome to Rock Paper Scissors!`)
-
-    /* Create a loop to continue playing the game until the score reaches 5 */
-    while (playerScore < 5 && computerScore < 5) {
-        
-        /* Declare variables for player & computer choices */
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-
-        /* Compare player's choice to computer's and award a point (or a tie) based on which selection wins */
-        if (playerSelection === 'rock' && computerSelection === 'paper') {
-            computerScore++;
-            console.log('Sorry, you lost this round! Paper beats Rock.');
-        } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            playerScore++
-            console.log('Nice! You won this round! Rock beats Scissors.');
-        } else if (playerSelection === 'rock' && computerSelection === 'rock') {
-            console.log('This round is a tie! No points awarded this time.');
-        } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-            console.log('This round is a tie! No points awarded this time.');
-        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-            computerScore++;
-            console.log('Sorry, you lost this round! Scissors beat Paper.');
-        } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-            playerScore++;
-            console.log('Nice! You won this round! Paper beats Rock.');
-        } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            playerScore++
-            console.log('Nice! You won this round! Scissors beat Paper.');
-        } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-            console.log('This round is a tie! No points awarded this time.');
-        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-            computerScore++
-            console.log('Sorry, you lost this round! Paper beats Rock.');
-        }
-        console.log(`Your Score: ${playerScore} points. Computer Score: ${computerScore} points.`);
+/* Create a function to calculate the computer's choice and return the value. */
+function getComputerChoice() {
+    let choiceCalc = Math.floor(Math.random() * 100);
+    if (choiceCalc < 33) return 'weapon1';
+    if (choiceCalc > 33 && choiceCalc < 66) return 'weapon2';
+    if (choiceCalc > 66) return 'weapon3';
 }
 
-/* Print a win or loss message to the console. */
+/* Compare player's choice to computer's and award a point (or a tie) based on which selection wins */
+function playRPS() {
+    
+    if (playerScore == 10 && computerScore != 10) { 
+        log.textContent = "No more opponents are willing to challenge your might! Rest and return another day."
+        return;
+    } else if (computerScore == 10 && playerScore != 10) {
+        log.textContent = "You have no energy left to fight! Rest and return another day."
+        return;
+    }
+
+    if (playerSelection === computerSelection) log.textContent = "Your weapons are too evenly matched! It's a tie.";
+
+    if (playerSelection === 'weapon1' && computerSelection === 'weapon2') {
+        ++playerScore;
+        log.textContent = "You fell your foe with a vicious cut to the chest, easily piercing his dragonhide armor!";
+    } else if (playerSelection === 'weapon1' && computerSelection === 'weapon3') {
+        ++computerScore;
+        log.textContent = "Rats! The enemy mage's icy magic freezes you in place while he goes for the kill.";
+    } else if (playerSelection === 'weapon2' && computerSelection === 'weapon1') {
+        ++computerScore;
+        log.textContent = "Your arrow glance's off the enemy swordsman's shield! He closes the distance and cuts you down.";
+    } else if (playerSelection === 'weapon2' && computerSelection === 'weapon3') {
+        ++playerScore;
+        log.textContent = "Your arrow pierces the enemy mage's robes before he can even cast a spell! He falls to the floor, dead.";
+    } else if (playerSelection === 'weapon3' && computerSelection === 'weapon1') {
+        ++playerScore;
+        log.textContent = "Your icy magic freezes the heavily-armored swordsmen in place, allowing you to blast him to pieces!";
+    } else if (playerSelection === 'weapon3' && computerSelection === 'weapon2') {
+        ++computerScore;
+        log.textContent = "Before you can loose a spell, the enemy archer's arrow finds your heart, killing you instantly.";
+    }
+    kills.textContent = `${playerScore}`;
+    deaths.textContent = `${computerScore}`;
+
+    console.log(`${playerScore}`);
+}
+
+// Adding click event listeners to each weapon to initialize a round.
+dscim.addEventListener('click', function (e) {
+    playerSelection = 'weapon1';
+    computerSelection = getComputerChoice();
+    playRPS();
+});
+
+bowfa.addEventListener('click', function (e) {
+    playerSelection = 'weapon2';
+    computerSelection = getComputerChoice();
+    playRPS();
+});
+
+astaff.addEventListener('click', function (e) {
+    playerSelection = 'weapon3';
+    computerSelection = getComputerChoice();
+    playRPS();
+});
+
+/* Print a win or loss message to the console.
 if (playerScore === 5) {
     console.log(`Congratulations! You won with ${playerScore} points to the computer's ${computerScore} points!`);
 } else {
     console.log(`Darn! Looks like the computer wins this time with ${computerScore} points versus your ${playerScore} points.`);
-}
-
-}
-
-playRPS();
+} */

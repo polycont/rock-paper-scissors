@@ -84,9 +84,13 @@ img {
 #kd-txt, #kd-num {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 40px;
     color: yellow;
     text-shadow: 2px 2px black;
+}
+
+#kill-txt, #death-txt {
+    margin-right: -10px;
 }
 
 #kd-txt h3 {
@@ -94,23 +98,10 @@ img {
 }
 
 #kills, #deaths {
-    padding: 15px 10px 15px 10px;
-}
-
-#kills, #deaths {
+    padding: 5px 10px 5px 10px;
     border: 2px solid black;
-    color: black;
-    text-shadow: none;
-}
-
-#kill-txt {
-    margin-right: 8%;
-    padding-left: 15px;
-}
-
-#death-txt {
-    padding-left: 25px;
-    padding-right: 10px
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 .results {
@@ -126,12 +117,17 @@ img {
 }
 
 #results-box {
-    color: black;
-    border: 2px solid black;
-    padding: 30px 15px 30px 15px;
+    color: #1F1DED;
+    border: 2px solid #4F4836;
+    padding: 20px 15px 20px 15px;
     font-size: larger;
     text-shadow: none;
     margin-top: 10px;
+    min-height: 20px;
+    min-width: 300px;
+    background-image: url(images/parchment.png);
+    background-repeat: no-repeat;
+    background-size: cover;;
 }
 
 .buttons {
@@ -147,7 +143,6 @@ img {
     border-style: none;
     margin-bottom: 3%;
 }
-
 
 .footer {
     background-color: black;

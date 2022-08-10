@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
         <body>
-        <!--<script src="javascript.js"></script>-->  
+            <script src="javascript.js" defer></script>
             <div class="main-content">
                 <div class="welcome">
                     <h2>Welcome to the Duel Arena.</h2>
@@ -29,27 +29,22 @@
                             <h3 id="death-txt">Deaths</h3>
                         </div>
                         <div id="kd-num">
-                            <p id="kills">Score Placeholder</p>
-                            <p id="deaths">Score Placeholder</p>
+                            <p id="kills">0</p>
+                            <p id="deaths">0</p>
                         </div>
                     </div>
                     <div class="results">
-                            <h3 id="results-txt">Kills</h3>
-                            <p id="results-box">Score Placeholder</p>
-
+                            <h3 id="results-txt">Combat Log</h3>
+                            <p id="results-box"></p>
                     </div>
-
                 </div>
                 <div class="buttons">
-                    <button id="replay">Play Again</button>
+                    <button id="replay" onClick="window.location.reload();">Rest and return to the fray!</button>
                 </div>
             </div>
             <div class="footer">
                 <p>Copyright Cohen Coberly 2022</p>
             </div>
-            <!-- <button>Select Bet Amount</button>
-            <button>Reset</button>
-            <button>New Game</button> -->
         </body>
 </html>
 
