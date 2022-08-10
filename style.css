@@ -8,6 +8,14 @@ body,
     display: flex;
 }
 
+@font-face {
+    font-family: 'RuneScape UF';
+    src: url("fonts/runescape_uf.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 body {
     height: 100%;
 }
@@ -140,6 +148,7 @@ img {
     background-color: yellow;
     border-style: none;
     margin-bottom: 3%;
+    box-shadow: 5px 10px black;
 }
 
 .footer {
