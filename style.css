@@ -3,6 +3,7 @@ body,
 .welcome,
 .weapon-images,
 .weapon-labels,
+.results,
 .footer {
     display: flex;
 }
@@ -74,16 +75,79 @@ img {
     height: auto;
 }
 
+.scoring {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#kd-txt, #kd-num {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: yellow;
+    text-shadow: 2px 2px black;
+}
+
+#kd-txt h3 {
+    margin-bottom: -10px;
+}
+
+#kills, #deaths {
+    padding: 15px 10px 15px 10px;
+}
+
+#kills, #deaths {
+    border: 2px solid black;
+    color: black;
+    text-shadow: none;
+}
+
+#kill-txt {
+    margin-right: 8%;
+    padding-left: 15px;
+}
+
+#death-txt {
+    padding-left: 25px;
+    padding-right: 10px
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: yellow;
+    text-shadow: 2px 2px black;
+}
+
+#results-txt {
+    margin-bottom: 0px;
+}
+
+#results-box {
+    color: black;
+    border: 2px solid black;
+    padding: 30px 15px 30px 15px;
+    font-size: larger;
+    text-shadow: none;
+    margin-top: 10px;
+}
+
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
 }
 
 .buttons button {
-    height: 50px;
-
+    font-family: 'RuneScape UF';
+    font-size: larger;
+    padding: 10px 15px 10px 15px;
+    background-color: yellow;
+    border-style: none;
+    margin-bottom: 3%;
 }
+
 
 .footer {
     background-color: black;

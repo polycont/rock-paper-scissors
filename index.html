@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
         <body>
-        <!--<script src="javascript.js"></script>-->
-            
+        <!--<script src="javascript.js"></script>-->  
             <div class="main-content">
                 <div class="welcome">
                     <h2>Welcome to the Duel Arena.</h2>
@@ -23,18 +22,34 @@
                     <h4>Bow of Faerdhinen</h4>
                     <h4>Ancient Staff</h4>
                 </div>
-                <div class="buttons">
-                    <button>New Game</button>
-                    <button>Play Again</button>
-                    <button>Select Bet Amount</button>
-                    <button>Reset</button>
-                </div>
-            </div>
-            <div class="results">
+                <div class="scoring">
+                    <div class="scores">
+                        <div id="kd-txt">
+                            <h3 id="kill-txt">Kills</h3>
+                            <h3 id="death-txt">Deaths</h3>
+                        </div>
+                        <div id="kd-num">
+                            <p id="kills">Score Placeholder</p>
+                            <p id="deaths">Score Placeholder</p>
+                        </div>
+                    </div>
+                    <div class="results">
+                            <h3 id="results-txt">Kills</h3>
+                            <p id="results-box">Score Placeholder</p>
 
+                    </div>
+
+                </div>
+                <div class="buttons">
+                    <button id="replay">Play Again</button>
+                </div>
             </div>
             <div class="footer">
                 <p>Copyright Cohen Coberly 2022</p>
             </div>
+            <!-- <button>Select Bet Amount</button>
+            <button>Reset</button>
+            <button>New Game</button> -->
         </body>
 </html>
+
