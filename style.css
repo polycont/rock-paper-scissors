@@ -10,11 +10,10 @@ body,
 
 @font-face {
     font-family: 'RuneScape UF';
-    src: url("https://github.com/polycont/rock-paper-scissors/tree/main/fonts/runescape_uf.ttf");
+    src: url("../rock-paper-scissors/runescape_uf.ttf") format('truetype');
     font-weight: bold;
     font-style: normal;
 }
-
 
 body {
     height: 100%;
@@ -148,7 +147,6 @@ img {
     background-color: yellow;
     border-style: none;
     margin-bottom: 3%;
-    box-shadow: 5px 10px black;
 }
 
 .footer {
