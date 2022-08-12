@@ -10,7 +10,7 @@ body,
 
 @font-face {
     font-family: 'RuneScape UF';
-    src: url("../rock-paper-scissors/runescape_uf.ttf") format('truetype');
+    src: url("./fonts/runescape_uf.ttf") format('truetype');
     font-weight: bold;
     font-style: normal;
 }
